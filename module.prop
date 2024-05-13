@@ -1,0 +1,6 @@
+id=Frpc4Magisk
+name=Frpc4Magisk
+version=v1.0
+versionCode=20240511
+author=BunnySHJ
+description=使用Magisk挂载运行通用FRPC程序。

@@ -1,0 +1,11 @@
+transport.dialServerTimeout = 3
+#transport.tls.enable = false
+log.disablePrintColor = true
+#trace, debug, info, warn, error
+#log.level = "debug"
+#log.to = "frps.log"
+#log.maxDays = 3
+auth.method = "token"
+serverAddr = "127.0.0.1"
+serverPort = 12345
+auth.token = "123456"

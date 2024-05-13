@@ -22,8 +22,8 @@ ui_print "- Magisk version: $MAGISK_VER ($MAGISK_VER_CODE)"
 
 mkdir -p "${service_dir}"
 
-if [ -d "/data/adb/modules/FRPC4Magisk" ]; then
-  rm -rf "/data/adb/modules/FRPC4Magisk"
+if [ -d "/data/adb/modules/Frpc4Magisk" ]; then
+  rm -rf "/data/adb/modules/Frpc4Magisk"
   ui_print "- Old module deleted."
 fi
 

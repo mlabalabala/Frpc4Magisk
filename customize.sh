@@ -54,13 +54,13 @@ set_perm_recursive $MODPATH 0 0 0755 0644
 set_perm_recursive /data/adb/frpc 0 3005 0755 0644
 set_perm_recursive /data/adb/frpc/start.sh  0 3005 0755 0700
 set_perm_recursive /data/adb/frpc/service.sh  0 3005 0755 0700
-set_perm_recursive /data/adb/frpc/inotify.sh  0 3005 0755 0700
+set_perm_recursive /data/adb/frpc/${bin_name}.inotify  0 3005 0755 0700
 set_perm ${service_dir}/frpc_service.sh  0  0  0755
 set_perm $MODPATH/uninstall.sh  0  0  0755
 set_perm /data/adb/frpc/frpc  0  0  0755
 set_perm /data/adb/frpc/start.sh  0  0  0755
 set_perm /data/adb/frpc/service.sh  0  0  0755
-set_perm /data/adb/frpc/inotify.sh  0  0  0755
+set_perm /data/adb/edge/${bin_name}.inotify  0  0  0755
 
 ui_print "- Delete leftover files"
 rm -rf $MODPATH/frpc

@@ -80,3 +80,13 @@ stop() {
     log "${bin_name} stopped!"
   fi
 }
+
+start_inotifyd() {
+  PIDs=($($busybox pidof inotifyd))
+  for PID in "${PIDs[@]}"; do
+    if grep -q "${bin_name}.inotify" "/proc/$PID/cmdline"; then
+      kill -9 "$PID"
+    fi
+  done
+  inotifyd "${scripts_dir}/${bin_name}.inotify" "${moddir}" >> "/dev/null" 2>&1 &
+}

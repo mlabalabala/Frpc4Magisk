@@ -74,9 +74,9 @@ stop() {
   local _pid=$(get_running_pid ${bin_name})
   if [ -n "${_pid}" ]; then
     kill "${_pid}"
-    rm -f "${scripts_dir}/${bin_name}.pid"
     log "${bin_name} stopped!"
   fi
+  rm -f "${scripts_dir}/${bin_name}.pid"
 }
 
 start_inotifyd() {

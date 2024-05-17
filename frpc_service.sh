@@ -1,8 +1,13 @@
 #!/system/bin/sh
 
 (
-    until [ $(getprop init.svc.bootanim) = "stopped" ]; do
-        sleep 10
+    until [ "$(getprop sys.boot_completed)" -eq 1 ]; do
+        sleep 3
+    done
+
+    until [ -d "/sdcard/frpc" ]; do
+      mkdir -p "/sdcard/frpc"
+      sleep 3
     done
 
     if [ -f "/data/adb/frpc/start.sh" ]; then

@@ -61,7 +61,10 @@ check_run_status() {
   sleep 5
   local _get_pid="$($busybox pidof "${bin_name}")"
   if [ -z "${_get_pid}" ]; then
-    rm -f ${scripts_dir}/${bin_name}.pid
+    if [ -e "${scripts_dir}/${bin_name}.pid" ]; then
+      rm -f ${scripts_dir}/${bin_name}.pid
+    fi
+    touch ${moddir}/disable
     log "${bin_name} run feild! please check run.log."
     sed -Ei "s/^description=(\[.*][[:space:]]*)?/description=[ $current_time | ${bin_name} run feild! please check run.log! ] /g" "${moddir}/module.prop"
   else
